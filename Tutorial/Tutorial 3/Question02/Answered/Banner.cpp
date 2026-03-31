@@ -21,12 +21,18 @@ void Banner::validateExpiryDate(int currentDate) const {
     // Jika currentDate melewati expiryDate (>),
     // lemparkan BannerExpiredException.
     // Asumsi format date selalu benar.
+    if (currentDate > expiryDate) {
+        throw BannerExpiredException();
+    }
 }
 
 void Banner::validateItemAvailability() const {
     // TODO 2: Validasi ketersediaan item.
     // Jika item sudah habis (<= 0),
     // lemparkan ItemSoldOutException.
+    if (itemCount <= 0) {
+        throw ItemSoldOutException();
+    }
 }
 
 void Banner::pullItem(int currentDate) {
@@ -51,4 +57,7 @@ void Banner::pullItem(int currentDate) {
     // TODO 3: Validasi dengan fungsi validasi yang telah dibuat.
     // Cek expired lalu item availability
     // Jika exception tidak terjadi, gacha berhasil, itemCount berkurang 1
+    validateExpiryDate(currentDate);
+    validateItemAvailability();
+    itemCount--;
 }

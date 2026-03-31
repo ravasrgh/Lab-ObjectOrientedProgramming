@@ -61,10 +61,22 @@ public:
 };
 
 // TODO 1: Buat InsufficientGemsException class (errorCode = 1, errorType = "INSUFFICIENT_GEMS")
+class InsufficientGemsException : public GachaException {
+public:
+    InsufficientGemsException() : GachaException(1, "INSUFFICIENT_GEMS") {}
+};
 
 // TODO 2: Buat BannerExpiredException class (errorCode = 2, errorType = "BANNER_EXPIRED")
+class BannerExpiredException : public GachaException {
+public:
+    BannerExpiredException() : GachaException(2, "BANNER_EXPIRED") {}
+};
 
 // TODO 3: Buat ItemSoldOutException class (errorCode = 3, errorType = "ITEM_SOLD_OUT")
+class ItemSoldOutException : public GachaException {
+public:
+    ItemSoldOutException() : GachaException(3, "ITEM_SOLD_OUT") {}
+};
 
 // * Ketiga exception tersebut juga merupakan GachaException agar bisa polymorphic
 

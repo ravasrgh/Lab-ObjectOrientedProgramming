@@ -55,9 +55,13 @@ int main() {
          */
 
         // TODO: Buat blok try-catch
-        // Di dalam try, lakukan performPull (baca GachaSystem), jika tidak ada exception maka printPullSuccess
-        // Catch semua GachaException
-        // Jika terjadi exception, lakukan printPullFailed dan printRollbackLog
+        try {
+            GachaSystem::performPull(p, banner, pullCost, currentDate);
+            OutputFormatter::printPullSuccess(p.getGems());
+        } catch (GachaException& e) {
+            OutputFormatter::printPullFailed(e);
+            OutputFormatter::printRollbackLog(p.getGems());
+        }
 
         OutputFormatter::printSeparator();
     }
