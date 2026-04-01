@@ -7,12 +7,15 @@
 // dan destructornya TIDAK akan dipanggil. Ini behavior yang tepat karena
 // gemsnya memang belum sempat terpotong karena exception.
 
-// GachaTransaction(...) {...}
+GachaTransaction::GachaTransaction(Player& p, int cost) : player(p), cost(cost), isCommitted(false) {
+    player.deductGems(cost);
+}
 
 
 // TODO 2: Tandai Commit Sukses
 void GachaTransaction::commit() {
     // Ubah flag isCommitted
+    isCommitted = true;
 }
 
 
@@ -34,4 +37,7 @@ GachaTransaction::~GachaTransaction() {
 
     // Jika BUKAN isCommitted (berarti gagal di tengah jalan), maka
     // tambah gems milik player untuk mengembalikan Gems sebesar cost.
+    if (!isCommitted) {
+        player.addGems(cost);
+    }
 }
