@@ -13,6 +13,6 @@ public:
     // TODO: deklarasikan constructor, method calculateWage() dan pure virtual calculateRating() serta destructor
     Player(std::string, int, std::string, std::string, int, double);
     double calculateWage() const;
-    virtual double calculateRating() = 0;
+    virtual double calculateRating() const = 0;
     ~Player();
 };

@@ -7,7 +7,7 @@ Staff::Staff(std::string n, int a, std::string c, std::string l, std::string d)
 {
 }
 
-double Staff::calculateWage() {
+double Staff::calculateWage() const {
     // TODO: return fixed wage, yaitu 50000.
     return 50000;
 }

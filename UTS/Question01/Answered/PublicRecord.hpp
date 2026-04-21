@@ -3,6 +3,10 @@
 
 #include "BaseRecord.hpp"
 
-class PublicRecord {};
+class PublicRecord : public BaseRecord {
+public:
+    PublicRecord(std::string author, int key);
+    int calculateClearance() const override;
+};
 
 #endif

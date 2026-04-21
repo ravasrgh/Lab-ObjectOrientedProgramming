@@ -12,8 +12,8 @@ public:
     // TODO: deklarasikan constructor, methods getProfile(), calculateWage(), work(), serta destructor
     ClubMember(std::string, int, std::string);
     virtual ~ClubMember();
-    virtual std::string getProfile() = 0;
-    virtual double calculateWage() = 0;
-    virtual void work() = 0;
+    virtual std::string getProfile() const = 0;
+    virtual double calculateWage() const = 0;
+    virtual void work() const = 0;
 
 };

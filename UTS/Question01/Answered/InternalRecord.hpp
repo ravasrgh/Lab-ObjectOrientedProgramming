@@ -3,6 +3,10 @@
 
 #include "BaseRecord.hpp"
 
-class InternalRecord {};
+class InternalRecord : protected BaseRecord {
+public:
+    InternalRecord(std::string author, int key);
+    int peekSecurity() const;
+};
 
 #endif

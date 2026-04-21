@@ -11,7 +11,7 @@ protected:
 public:
     // TODO: deklarasikan constructor, methods calculateWage() dan pure virtual getSpeciality(), serta destructor 
     Staff(std::string, int, std::string, std::string, std::string);
-    double calculateWage();
-    virtual std::string getSpecialty() = 0;
+    double calculateWage() const;
+    virtual std::string getSpecialty() const = 0;
     ~Staff();
 };

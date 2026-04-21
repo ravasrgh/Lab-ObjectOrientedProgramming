@@ -3,6 +3,9 @@
 
 #include "BaseRecord.hpp"
 
-class SecureVaultRecord {};
+class SecureVaultRecord : private BaseRecord {
+public:
+    SecureVaultRecord(std::string author, int key);
+};
 
 #endif
