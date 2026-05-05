@@ -1,37 +1,15 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Academy {
-    private List<Scroll> scrolls;
+  Scroll scroll;
+  public addScroll() {
 
-    public Academy() {
-        scrolls = new ArrayList<>();
-    }
+  }
+  public String getScroll() {
 
-    public void addScroll(Scroll scroll) {
-        scrolls.add(scroll);
-    }
+  }
+  public void search() {
+    
+  }
+  public int count() {
 
-    public Scroll getScroll(int index) {
-        if (index < 1 || index > scrolls.size()) {
-            return null;
-        }
-        return scrolls.get(index - 1);
-    }
-
-    public int search(String keyword) {
-        int count = 0;
-        if (keyword == null) return count;
-        String lowerKeyword = keyword.toLowerCase();
-        for (Scroll s : scrolls) {
-            if (s.getContent() != null && s.getContent().toLowerCase().contains(lowerKeyword)) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    public int count() {
-        return scrolls.size();
-    }
+  }
 }
