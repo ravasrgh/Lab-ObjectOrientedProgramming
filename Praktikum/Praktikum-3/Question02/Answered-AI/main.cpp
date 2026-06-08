@@ -38,8 +38,7 @@ int main() {
       if (w == nullptr) {
         cout << "NOT FOUND\n";
       } else {
-        cout << w->id << "|" << w->name << "|" << w->type << "|" << w->damage
-             << "|" << w->rarity << "\n";
+        cout << w->id << "|" << w->name << "|" << w->type << "|" << w->damage << "|" << w->rarity << "\n";
       }
     } else if (cmd == 4) {
       inventory.sort();
